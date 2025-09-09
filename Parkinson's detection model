@@ -1,0 +1,50 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 1. Load Dataset from UCI ML Repo
+from ucimlrepo import fetch_ucirepo
+
+# fetch dataset (ID 174 = Parkinson's)
+parkinsons = fetch_ucirepo(id=174)
+
+# convert features and targets to pandas DataFrame/Series
+print(parkinsons.variables.keys())
+X = pd.DataFrame(parkinsons.data.features, columns=parkinsons.feature_names)
+y = pd.Series(parkinsons.data.targets.squeeze(), name="status")
+
+
+# 2. Scale Features
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+# 3. Split into Training and Test Sets
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
+
+# 4. Train Random Forest Classifier
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# 5. Make Predictions
+y_pred = model.predict(X_test)
+
+# 6. Evaluate Model
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("\nClassification Report:\n", classification_report(y_test, y_pred))
+
+# 7. Confusion Matrix
+cm = confusion_matrix(y_test, y_pred)
+sns.heatmap(cm, annot=True, fmt='d', cmap="Blues")
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+plt.title("Confusion Matrix")
+plt.show()
+
+# 8. Predict on New Data (Example)
+new_sample = X_test[0].reshape(1, -1)
+prediction = model.predict(new_sample)
+print("Prediction for new sample:", "Parkinson's" if prediction[0] == 1 else "Healthy")
