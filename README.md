@@ -15,7 +15,7 @@ This portfolio demonstrates my ability to:
 - **Goal:** Predict 2025 Chinese GP performance based on qualifying results.  
 - **Tech:** Python, FastF1, scikit-learn (Gradient Boosting)  
 - **Highlights:** Feature engineering from racing telemetry, ML regression pipeline, race performance ranking.  
-- [Project Folder ➝](F1 ML model) 
+- [Project Folder ➝](https://github.com/ano9989/Projects/blob/main/F1%20ML%20model) 
 
 ---
 
@@ -23,7 +23,7 @@ This portfolio demonstrates my ability to:
 - **Goal:** Classify patients as healthy vs Parkinson’s using biomedical voice measurements.  
 - **Tech:** Python, scikit-learn (Random Forest), UCI ML Repository  
 - **Highlights:** Healthcare-focused ML classification, confusion matrix visualization, 92% accuracy.  
-- [Project Folder ➝](Parkinson's detection model)  
+- [Project Folder ➝](https://github.com/ano9989/Projects/blob/main/Parkinson's%20detection%20model)  
 
 ---
 
@@ -31,7 +31,7 @@ This portfolio demonstrates my ability to:
 - **Goal:** Analyze digital music sales to uncover top-selling products, revenue by country, and monthly performance trends.  
 - **Tech:** SQL (joins, aggregations, window functions)  
 - **Highlights:** Revenue analysis, monthly sales performance, ranking tracks per country with window functions.  
-- [Project Folder ➝](Business Insights SQL)
+- [Project Folder ➝](https://github.com/ano9989/Projects/blob/main/Business%20Insights%20SQL)
 - Below is an insight into the executive report, which I used Tableau to create an interactive dashboard to present the data:"https://github.com/user-attachments/assets/0474bc3b-000e-4b8f-95b4-2f0c9230226a" />
 
 ---
