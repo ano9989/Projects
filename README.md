@@ -11,3 +11,17 @@ The project highlights skills in:
 - Data analysis (working with time-series race telemetry and lap data)
 - Machine learning pipeline development (scikit-learn, model training & evaluation)
 - Practical application of ML to a real-world, high-variance sports dataset
+
+
+# 🧠 Parkinson's Disease Detection using Random Forest  
+
+This project aims to apply machine learning for healthcare by predicting whether a patient has Parkinson’s disease based on voice measurement features.  
+
+Using the [UCI Parkinson’s dataset](https://archive.ics.uci.edu/dataset/174/parkinsons), I built a Random Forest Classifier to distinguish between healthy individuals and Parkinson’s patients.  
+
+The project demonstrates skills in:
+- Data preprocessing (scaling, handling biomedical data)  
+- Model training & evaluation (Random Forest, scikit-learn pipeline)  
+- Model interpretability (confusion matrix visualization)  
+- Applying ML to a real-world healthcare dataset 
+
