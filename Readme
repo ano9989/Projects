@@ -1,0 +1,47 @@
+# 🚀 Data Science & Machine Learning Portfolio  
+
+Welcome to my portfolio! This repository highlights my work in **data science, machine learning, and SQL analytics**.  
+Each project applies data-driven methods to solve real-world problems.
+
+## 👤 About Me  
+I am passionate about extracting insights from data and building predictive models that solve real problems.  
+This portfolio demonstrates my ability to:  
+- Collect, clean, and preprocess diverse datasets  
+- Build and evaluate **machine learning models**  
+- Write efficient **SQL queries** for business analytics  
+- Communicate findings clearly with **visualizations & documentation**  
+
+
+
+## 📂 Projects  
+
+### 🏎️ Formula 1 Race Time Prediction  
+- **Goal:** Predict 2025 Chinese GP performance based on qualifying results.  
+- **Tech:** Python, FastF1, scikit-learn (Gradient Boosting)  
+- **Highlights:** Feature engineering from racing telemetry, ML regression pipeline, race performance ranking.  
+- [Project Folder ➝](./f1-prediction/README.md)  
+
+---
+
+### 🧠 Parkinson’s Disease Detection  
+- **Goal:** Classify patients as healthy vs Parkinson’s using biomedical voice measurements.  
+- **Tech:** Python, scikit-learn (Random Forest), UCI ML Repository  
+- **Highlights:** Healthcare-focused ML classification, confusion matrix visualization, 92% accuracy.  
+- [Project Folder ➝](./parkinsons-detection/README.md)  
+
+---
+
+### 🎵 Music Sales Analysis with SQL (Chinook Database)  
+- **Goal:** Analyze digital music sales to uncover top-selling products, revenue by country, and monthly performance trends.  
+- **Tech:** SQL (joins, aggregations, window functions)  
+- **Highlights:** Revenue analysis, monthly sales performance, ranking tracks per country with window functions.  
+- [Project Folder ➝](./sql-music-analysis/README.md)  
+
+---
+
+## 🛠️ Tools & Technologies  
+- **Programming:** Python (pandas, numpy, scikit-learn, matplotlib, seaborn)  
+- **Databases:** SQL (SQLite, joins, window functions, aggregations)  
+- **ML Models:** Random Forest, Gradient Boosting, regression & classification pipelines  
+- **Other:** FastF1 (sports telemetry), Jupyter, Git/GitHub  
+
