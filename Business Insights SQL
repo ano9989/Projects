@@ -1,0 +1,60 @@
+SELECT * FROM Track 
+
+-- Top Selling Products in descending order
+
+SELECT Track.Name AS Product, SUM(InvoiceLine.Quantity) AS Total_Sold
+FROM InvoiceLine
+JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+GROUP BY Track.Name
+ORDER BY Total_Sold DESC
+
+
+-- Revenue per country
+
+SELECT Invoice.BillingCountry AS COUNTRY, SUM(Invoice.Total) AS SALES
+FROM Invoice
+GROUP BY Invoice.BillingCountry
+ORDER BY SALES DESC
+
+
+-- Monthly Performance
+
+SELECT
+	strftime('%Y-%m',i.InvoiceDate) AS YearMonth,
+    SUM(il.Quantity * il.UnitPrice) AS SALES
+FROM Invoice i
+JOIN InvoiceLine il ON il.InvoiceId = i.InvoiceId
+GROUP BY YEARMONTH
+ORDER BY YEARMONTH
+
+-- Rank the top tracks by sales within each country (window function)
+
+SELECT 
+  t.Name AS toptracks,
+  c.Country AS country,
+  SUM(il.Quantity) AS sales,
+  RANK() OVER (PARTITION BY country ORDER BY il.Quantity DESC) AS Ranking
+FROM InvoiceLine il
+JOIN Invoice i  ON il.InvoiceId = i.InvoiceId
+JOIN Customer c ON i.CustomerId = c.CustomerId
+JOIN Track t    ON il.TrackId = t.TrackId
+GROUP BY t.Name, c.Country
+ORDER BY sales DESC;
+
+SELECT 
+    toptracks,
+    country,
+    sales,
+    DENSE_RANK() OVER (PARTITION BY country ORDER BY sales DESC) AS Ranking
+FROM (
+    SELECT 
+        t.Name AS toptracks,
+        c.Country AS country,
+        SUM(il.Quantity) AS sales
+    FROM InvoiceLine il
+    JOIN Invoice i ON il.InvoiceId = i.InvoiceId
+    JOIN Customer c ON i.CustomerId = c.CustomerId
+    JOIN Track t ON il.TrackId = t.TrackId
+    GROUP BY t.Name, c.Country
+) sub
+ORDER BY country, Ranking
